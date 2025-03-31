@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quay số ngẫu nhiên</title>
+</head>
+<body>
+    <button onclick="spin()">Quay số</button>
+    <p id="result"></p>
+
+    <script>
+        const items = [
+            "Bài 4. Nhân lực điều dưỡng: Những thách thức toàn cầu",
+            "Bài 5. Thoả thuận thừa nhận lẫn nhau trong ASEAN (MRA) về nghề Điều dưỡng",
+            "Bài 6. Quản lý chất lượng chăm sóc",
+            "Bài 7. An toàn người bệnh và hướng dẫn phòng ngừa sự cố y khoa tại các cơ sở khám chữa bệnh",
+            "Bài 8. Kỹ năng quản lý căng thẳng",
+            "Bài 9. Kỹ năng giao tiếp với đồng nghiệp",
+            "Bài 10. Kỹ năng giải quyết vấn đề và giải quyết mâu thuẫn"
+        ];
+
+        function spin() {
+            if (items.length === 0) {
+                alert("Tất cả các số đã được quay!");
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * items.length);
+            const selectedItem = items.splice(randomIndex, 1)[0];
+
+            document.getElementById("result").innerText = "Kết quả: " + selectedItem;
+        }
+    </script>
+</body>
+</html>
